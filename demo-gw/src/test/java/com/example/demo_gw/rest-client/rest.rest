@@ -1,0 +1,6 @@
+
+### ms1
+GET http://localhost:8080/ms1/hello
+
+### ms2
+GET http://localhost:8080/ms2/hello

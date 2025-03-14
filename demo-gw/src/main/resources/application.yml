@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo-gw # 서비스 이름 설정
+  cloud:
+    gateway:
+      routes:
+        - id: ms1
+          uri: lb://ms1
+          predicates:
+            - Path=/ms1/**
+        - id: ms2
+          uri: lb://ms2
+          predicates:
+            - Path=/ms2/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # Eureka 서버 주소 설정
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 갱신 간격 (초)
+    lease-expiration-duration-in-seconds: 30 # 만료 시간 (초)

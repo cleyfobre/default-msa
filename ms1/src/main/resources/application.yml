@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms1 # 서비스 이름 설정
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # Eureka 서버 주소 설정
+  instance:
+    lease-renewal-interval-in-seconds: 10 # 갱신 간격 (초)
+    lease-expiration-duration-in-seconds: 30 # 만료 시간 (초)
